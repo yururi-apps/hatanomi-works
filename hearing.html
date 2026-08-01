@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<title>ご依頼前ヒアリングシート｜オンライン事務代行 ハタノミ</title>
+<style>
+  :root{
+    --ink:#26303b;
+    --sub:#5c6470;
+    --line:#e3e0d7;
+    --paper:#faf9f5;
+    --card:#ffffff;
+    --ai:#33607e;
+    --ai-soft:#e9f1f6;
+    --ok:#4f8a63;
+    --cond:#b8862f;
+    --shadow:0 2px 12px rgba(38,48,59,.06);
+    --serif:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.75;
+    font-size:15px;
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:820px;margin:0 auto;padding:0 20px 60px;}
+
+  .hero{
+    background:linear-gradient(135deg,#f2f7fa 0%,#eaf1f5 100%);
+    border-bottom:3px solid var(--ai);
+    padding:36px 20px 28px;
+  }
+  .hero-inner{max-width:820px;margin:0 auto;}
+  .eyebrow{
+    display:inline-block;font-size:12px;letter-spacing:.18em;
+    color:var(--ai);font-weight:700;margin-bottom:8px;
+  }
+  h1{
+    font-family:var(--serif);font-weight:600;
+    font-size:24px;margin:0 0 6px;line-height:1.45;letter-spacing:.02em;
+  }
+  .byname{font-size:13.5px;color:var(--sub);margin:0;}
+
+  .intro{
+    background:#fff;border:1px solid var(--line);border-left:4px solid var(--ai);
+    border-radius:10px;padding:15px 19px;box-shadow:var(--shadow);
+    font-size:13.5px;color:var(--sub);margin:24px 0 8px;
+  }
+  .intro b{color:var(--ink);}
+
+  section{margin-top:30px;}
+  h2{
+    font-size:17px;margin:0 0 4px;display:flex;align-items:center;gap:10px;
+    padding-bottom:8px;border-bottom:2px solid var(--ai-soft);
+  }
+  h2 .tag{
+    display:inline-flex;align-items:center;justify-content:center;
+    min-width:26px;height:26px;padding:0 7px;border-radius:7px;background:var(--ai);
+    color:#fff;font-size:13px;font-weight:700;flex:none;
+  }
+  .h2sub{color:var(--sub);font-size:13px;margin:8px 0 12px;}
+
+  .q{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:15px 18px 16px;box-shadow:var(--shadow);margin-bottom:12px;
+  }
+  .q-head{
+    display:flex;gap:9px;align-items:baseline;
+    font-size:14.5px;font-weight:700;margin-bottom:6px;
+  }
+  .q-n{
+    background:var(--ai);color:#fff;border-radius:6px;
+    font-size:12px;padding:1px 9px;flex:none;letter-spacing:.04em;
+  }
+  .q-note{font-size:12.5px;color:var(--sub);margin:0 0 9px;}
+
+  /* ===== 入力欄 ===== */
+  input[type="text"], textarea{
+    width:100%;
+    border:1px solid #c9c4b8;
+    border-radius:8px;
+    background:#fffdf8;
+    padding:9px 12px;
+    font-size:13.5px;
+    font-family:inherit;
+    line-height:1.7;
+    color:var(--ink);
+  }
+  textarea{min-height:84px;resize:vertical;}
+  input[type="text"]:focus, textarea:focus{
+    outline:2px solid var(--ai);outline-offset:0;border-color:var(--ai);
+  }
+  .sub-label{
+    display:block;font-size:12.5px;color:var(--sub);
+    margin:9px 0 4px;
+  }
+  .opt{
+    display:block;padding:5px 0;font-size:13.5px;color:var(--ink);cursor:pointer;
+  }
+  .opt input{margin-right:9px;vertical-align:-1px;transform:scale(1.15);}
+  .opt b{font-weight:700;}
+  /* 選択肢＋記入欄を横に並べる。flexなので互いに重ならない（幅100%の影響も受けない） */
+  .opt-row{
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+    padding:5px 0;
+  }
+  .opt-row .opt{flex:none;padding:0;}
+  input[type="text"].sub-input{
+    flex:1 1 200px;
+    width:auto;
+    min-width:0;
+    max-width:340px;
+    padding:7px 11px;
+    font-size:13px;
+  }
+
+  .tip{
+    background:#eef5f0;border:1px solid #d3e4d9;border-left:4px solid var(--ok);
+    border-radius:8px;padding:13px 17px;font-size:13px;margin:14px 0 0;color:var(--sub);
+  }
+  .tip b{color:var(--ink);}
+
+  /* ===== 送信ブロック ===== */
+  .send{
+    background:var(--card);border:1px solid var(--line);border-top:4px solid var(--ai);
+    border-radius:14px;box-shadow:var(--shadow);
+    padding:22px 20px;margin-top:26px;
+  }
+  .send h3{margin:0 0 6px;font-size:16px;}
+  .send p{margin:0 0 14px;font-size:13px;color:var(--sub);}
+  .btn{
+    display:block;width:100%;
+    background:var(--ai);color:#fff;border:none;
+    border-radius:10px;padding:14px;font-size:15px;font-weight:700;
+    font-family:inherit;cursor:pointer;
+  }
+  .btn:active{opacity:.85;}
+  .btn:focus-visible{outline:3px solid var(--cond);outline-offset:2px;}
+  #copyMsg{
+    font-size:13px;margin:12px 0 0;min-height:20px;font-weight:700;
+  }
+  #outBox{
+    width:100%;min-height:170px;margin-top:12px;
+    border:1px solid #c9c4b8;border-radius:8px;background:#f7f9fb;
+    padding:11px 13px;font-size:12.5px;line-height:1.7;
+    font-family:ui-monospace,"SF Mono",Menlo,monospace;
+    color:var(--ink);resize:vertical;display:none;
+  }
+
+  footer{
+    margin-top:44px;padding-top:18px;border-top:1px solid var(--line);
+    font-size:13px;color:var(--sub);text-align:center;
+  }
+
+  @media (max-width:600px){
+    body{font-size:14.5px;}
+    h1{font-size:20px;}
+    .hero{padding:28px 18px 24px;}
+    input[type="text"].sub-input{max-width:100%;}
+  }
+  @media print{
+    body{background:#fff;}
+    .hero{background:#fff;}
+    .q,section{break-inside:avoid;}
+    .send{display:none;}
+    input[type="text"],textarea{background:#fff;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">HEARING SHEET</div>
+    <h1>ご依頼前ヒアリングシート</h1>
+    <p class="byname">ハタノミ｜オンライン事務代行・在宅バックオフィス業務代行</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="intro">
+    お問い合わせありがとうございます。お仕事の内容とご希望を教えてください。<br>
+    <b>すべて埋めていただく必要はありません。</b>わかる範囲・書ける範囲で大丈夫です。
+    空欄の部分は、初回ヒアリングでおうかがいします（無料。チャット・メールでも、オンライン30分でも承ります）。<br>
+    <b>この画面に直接ご入力いただき、一番下の「入力内容をコピーする」を押してください。</b>
+    コピーした内容を、メールまたはDMに貼り付けてお送りいただければ大丈夫です。<br>
+    ※ご入力の内容がどこかに送信されることはありません。コピーするまで、この画面の中だけにあります。
+  </div>
+
+  <!-- ===== 1. お客さまについて ===== -->
+  <section>
+    <h2><span class="tag">1</span>お客さまについて</h2>
+
+    <div class="q">
+      <div class="q-head"><span class="q-n">Q1</span>お名前（屋号・会社名があればあわせて）</div>
+      <input type="text" id="q1" autocomplete="off">
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-n">Q2</span>ご連絡先と、ご希望の連絡手段</div>
+      <p class="q-note">やりとりは非同期（チャット・メール中心）でお受けしています。複数選べます。</p>
+      <label class="opt"><input type="checkbox" name="q2way" value="メール">メール</label>
+      <label class="opt"><input type="checkbox" name="q2way" value="Chatwork">Chatwork</label>
+      <label class="opt"><input type="checkbox" name="q2way" value="Slack">Slack</label>
+      <div class="opt-row">
+        <label class="opt"><input type="checkbox" name="q2way" value="その他">その他</label>
+        <input type="text" id="q2other" class="sub-input" placeholder="ツール名" autocomplete="off">
+      </div>
+      <span class="sub-label">ご連絡先（メールアドレス・IDなど）</span>
+      <input type="text" id="q2contact" autocomplete="off">
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-n">Q3</span>事業・お仕事の内容（ざっくりで大丈夫です）</div>
+      <input type="text" id="q3" autocomplete="off">
+    </div>
+  </section>
+
+  <!-- ===== 2. お願いしたい作業について ===== -->
+  <section>
+    <h2><span class="tag">2</span>お願いしたい作業について</h2>
+
+    <div class="q">
+      <div class="q-head"><span class="q-n">Q4</span>いま一番手放したい作業を、<u>ひとつだけ</u>教えてください</div>
+      <textarea id="q4"></textarea>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-n">Q5</span>その作業の現状</div>
+      <p class="q-note">おおよそで構いません。</p>
+      <span class="sub-label">どのくらいの頻度で発生しますか？（毎日／週◯回／月◯回／不定期）</span>
+      <input type="text" id="q5freq" autocomplete="off">
+      <span class="sub-label">1回あたり、どのくらい時間がかかっていますか？</span>
+      <input type="text" id="q5time" autocomplete="off">
+      <span class="sub-label">手順書・マニュアル・過去の見本はありますか？</span>
+      <label class="opt"><input type="radio" name="q5doc" value="あり">あり</label>
+      <label class="opt"><input type="radio" name="q5doc" value="なし">なし</label>
+      <label class="opt"><input type="radio" name="q5doc" value="口頭でなら説明できる">口頭でなら説明できる</label>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-n">Q6</span>ほかにもお願いしたい作業があれば教えてください</div>
+      <p class="q-note">「提供サービスのご案内」のA〜Hの記号でも、自由に書いていただいても大丈夫です。</p>
+      <textarea id="q6"></textarea>
+    </div>
+  </section>
+
+  <!-- ===== 3. 分量・ご予算・納期 ===== -->
+  <section>
+    <h2><span class="tag">3</span>分量・ご予算・納期の感覚</h2>
+    <p class="h2sub">お見積りの精度を上げるための質問です。<b>「まだ決めていない」という回答も大歓迎</b>です。</p>
+
+    <div class="q">
+      <div class="q-head"><span class="q-n">Q7</span>ご希望に近いプランはどれですか？</div>
+      <p class="q-note">「提供サービスのご案内」の料金表と同じ区分です。迷ったら「まだ決めていない」で大丈夫です。</p>
+      <label class="opt"><input type="radio" name="q7" value="お試しプラン（単発・スポット）¥1,800／時・最低3時間〜"><b>お試しプラン</b>（単発・スポット）　¥1,800／時・最低3時間〜（＝¥5,400〜）</label>
+      <label class="opt"><input type="radio" name="q7" value="月額パック（ライト）月10時間まで ¥18,000／月"><b>月額パック（ライト）</b>　月10時間まで ¥18,000／月</label>
+      <label class="opt"><input type="radio" name="q7" value="月額パック（スタンダード）月20時間まで ¥34,000／月"><b>月額パック（スタンダード）</b>　月20時間まで ¥34,000／月</label>
+      <label class="opt"><input type="radio" name="q7" value="まだ決めていない・相談しながら決めたい">まだ決めていない・相談しながら決めたい</label>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-n">Q8</span>ご予算やボリュームについて、補足があれば教えてください</div>
+      <p class="q-note">例：「まずは月5時間くらいから試したい」「上限は月2万円まで」など。プランに当てはまらない場合も、内容をうかがってお見積りします。</p>
+      <input type="text" id="q8" autocomplete="off">
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-n">Q9</span>納期・スピード感のご希望</div>
+      <p class="q-note">※当日・翌日納期をご希望の場合は、時間単価の1.3倍（¥2,340／時）でのご相談とさせてください。余裕のある納期ほど確実にお受けできます。</p>
+      <span class="sub-label">最初の納品はいつ頃までにご入用ですか？</span>
+      <input type="text" id="q9due" autocomplete="off">
+      <span class="sub-label">普段のご連絡への返信は、どのくらいのスピード感をご希望ですか？（例：翌営業日でOK／当日中がよい）</span>
+      <input type="text" id="q9reply" autocomplete="off">
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-n">Q10</span>開始希望時期</div>
+      <label class="opt"><input type="radio" name="q10" value="すぐにでも">すぐにでも</label>
+      <div class="opt-row">
+        <label class="opt"><input type="radio" name="q10" value="時期が決まっている">時期が決まっている</label>
+        <input type="text" id="q10when" class="sub-input" placeholder="◯月◯日ごろ〜" autocomplete="off">
+      </div>
+      <label class="opt"><input type="radio" name="q10" value="未定・話を聞いてから決めたい">未定・話を聞いてから決めたい</label>
+    </div>
+  </section>
+
+  <!-- ===== 4. 進め方・情報の取り扱い ===== -->
+  <section>
+    <h2><span class="tag">4</span>進め方・情報の取り扱い</h2>
+    <p class="h2sub">作業にはAIツールを活用します（入力内容が学習に使われない設定を確認のうえ利用し、出力は必ず人手で検品して納品します）。</p>
+
+    <div class="q">
+      <div class="q-head"><span class="q-n">Q11</span>お使いのツール・データの受け渡し方法</div>
+      <p class="q-note">例：Googleドライブ／Excelファイルをメール添付／Chatworkで共有　など</p>
+      <input type="text" id="q11" autocomplete="off">
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-n">Q12</span>機密情報の取り扱いについて</div>
+      <span class="sub-label">お預かりするデータに、個人情報・機密情報は含まれますか？</span>
+      <label class="opt"><input type="radio" name="q12info" value="含む">含む</label>
+      <label class="opt"><input type="radio" name="q12info" value="含まない">含まない</label>
+      <label class="opt"><input type="radio" name="q12info" value="わからない">わからない</label>
+      <span class="sub-label">秘密保持契約（NDA）の締結をご希望ですか？</span>
+      <label class="opt"><input type="radio" name="q12nda" value="希望する">希望する</label>
+      <label class="opt"><input type="radio" name="q12nda" value="不要">不要</label>
+      <label class="opt"><input type="radio" name="q12nda" value="わからない">わからない</label>
+    </div>
+
+    <div class="q">
+      <div class="q-head"><span class="q-n">Q13</span>そのほか、ご質問・ご要望・気になっていること</div>
+      <textarea id="q13"></textarea>
+    </div>
+  </section>
+
+  <!-- ===== 送信ブロック ===== -->
+  <div class="send">
+    <h3>📋 入力内容をコピーする</h3>
+    <p>下のボタンを押すと、ご入力の内容が文章の形にまとまってコピーされます。<br>
+       そのままメール、またはDMに貼り付けてお送りください。</p>
+    <button type="button" class="btn" id="copyBtn">入力内容をコピーする</button>
+    <p id="copyMsg" role="status"></p>
+    <textarea id="outBox" readonly aria-label="コピーする内容"></textarea>
+  </div>
+
+  <div class="tip">
+    💡 <b>ご記入後の流れ</b>：内容を確認のうえ
+    <b>進め方と概算のお見積り</b>をご提案します（初回ヒアリングは無料。チャット・メールでも、オンライン30分でも承ります）。<br>
+    ※誠実なご提案のため、同時にお受けする案件は1件までとしています。
+    進行中の案件がある場合は、着手可能な時期をあわせてお伝えします。
+  </div>
+
+  <footer>
+    ハタノミ｜オンライン事務代行　　ご連絡先：hatanomi.n@gmail.com　　最終更新：2026-08-01
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var BLANK = "（未記入）";
+
+  function txt(id) {
+    var el = document.getElementById(id);
+    return el ? el.value.trim() : "";
+  }
+  function radio(name) {
+    var el = document.querySelector('input[name="' + name + '"]:checked');
+    return el ? el.value : "";
+  }
+  function checks(name) {
+    var list = document.querySelectorAll('input[name="' + name + '"]:checked');
+    var out = [];
+    for (var i = 0; i < list.length; i++) out.push(list[i].value);
+    return out;
+  }
+  function or(v) { return v ? v : BLANK; }
+
+  function build() {
+    var L = [];
+    L.push("━━━━━━━━━━━━━━━━━━━━━━━");
+    L.push(" ご依頼前ヒアリングシート");
+    L.push(" ハタノミ｜オンライン事務代行");
+    L.push("━━━━━━━━━━━━━━━━━━━━━━━");
+    L.push("");
+
+    L.push("■ 1. お客さまについて");
+    L.push("");
+    L.push("Q1. お名前（屋号・会社名）");
+    L.push("　" + or(txt("q1")));
+    L.push("");
+
+    L.push("Q2. ご連絡先と、ご希望の連絡手段");
+    var ways = checks("q2way");
+    var other = txt("q2other");
+    if (other) {
+      for (var i = 0; i < ways.length; i++) {
+        if (ways[i] === "その他") ways[i] = "その他（" + other + "）";
+      }
+      if (ways.indexOf("その他（" + other + "）") === -1) ways.push("その他（" + other + "）");
+    }
+    L.push("　ご希望の手段：" + or(ways.join("／")));
+    L.push("　ご連絡先：" + or(txt("q2contact")));
+    L.push("");
+
+    L.push("Q3. 事業・お仕事の内容");
+    L.push("　" + or(txt("q3")));
+    L.push("");
+
+    L.push("■ 2. お願いしたい作業について");
+    L.push("");
+    L.push("Q4. いま一番手放したい作業");
+    L.push("　" + or(txt("q4")));
+    L.push("");
+
+    L.push("Q5. その作業の現状");
+    L.push("　頻度：" + or(txt("q5freq")));
+    L.push("　1回あたりの時間：" + or(txt("q5time")));
+    L.push("　手順書・見本の有無：" + or(radio("q5doc")));
+    L.push("");
+
+    L.push("Q6. ほかにお願いしたい作業");
+    L.push("　" + or(txt("q6")));
+    L.push("");
+
+    L.push("■ 3. 分量・ご予算・納期の感覚");
+    L.push("");
+    L.push("Q7. ご希望に近いプラン");
+    L.push("　" + or(radio("q7")));
+    L.push("");
+
+    L.push("Q8. ご予算・ボリュームの補足");
+    L.push("　" + or(txt("q8")));
+    L.push("");
+
+    L.push("Q9. 納期・スピード感のご希望");
+    L.push("　最初の納品時期：" + or(txt("q9due")));
+    L.push("　返信のスピード感：" + or(txt("q9reply")));
+    L.push("");
+
+    L.push("Q10. 開始希望時期");
+    var when = radio("q10");
+    var whenTxt = txt("q10when");
+    if (when === "時期が決まっている" && whenTxt) when += "（" + whenTxt + "）";
+    L.push("　" + or(when));
+    L.push("");
+
+    L.push("■ 4. 進め方・情報の取り扱い");
+    L.push("");
+    L.push("Q11. お使いのツール・データの受け渡し方法");
+    L.push("　" + or(txt("q11")));
+    L.push("");
+
+    L.push("Q12. 機密情報の取り扱いについて");
+    L.push("　個人情報・機密情報：" + or(radio("q12info")));
+    L.push("　NDAのご希望：" + or(radio("q12nda")));
+    L.push("");
+
+    L.push("Q13. そのほか、ご質問・ご要望");
+    L.push("　" + or(txt("q13")));
+    L.push("");
+    L.push("━━━━━━━━━━━━━━━━━━━━━━━");
+
+    return L.join("\n");
+  }
+
+  var btn = document.getElementById("copyBtn");
+  var msg = document.getElementById("copyMsg");
+  var box = document.getElementById("outBox");
+
+  function ok(text) {
+    msg.textContent = "✅ コピーしました。メールまたはDMに貼り付けてお送りください。";
+    msg.style.color = "#4f8a63";
+  }
+  function manual() {
+    msg.textContent = "下の枠の文字をすべて選択してコピーし、メールまたはDMに貼り付けてください。";
+    msg.style.color = "#b8862f";
+    box.focus();
+    try { box.setSelectionRange(0, box.value.length); } catch (e) {}
+  }
+
+  btn.addEventListener("click", function () {
+    var data = build();
+    box.value = data;
+    box.style.display = "block";
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(data).then(ok, function () { fallback(data); });
+    } else {
+      fallback(data);
+    }
+  });
+
+  function fallback(data) {
+    // クリップボードが使えない環境（ファイルを直接開いた場合など）でも取り出せるようにする
+    try {
+      box.focus();
+      box.setSelectionRange(0, box.value.length);
+      var done = document.execCommand("copy");
+      if (done) { ok(data); return; }
+    } catch (e) {}
+    manual();
+  }
+})();
+</script>
+
+</body>
+</html>
